@@ -11,6 +11,9 @@ import com.example.wycodelib.util.Contants;
 
 import java.util.List;
 
+import static com.example.wycodelib.brightenscreen.BrightenService.TAG_SWITCH;
+import static com.example.wycodelib.brightenscreen.BrightenService.TAG_TIME;
+
 /**
  * @ClassName BrightenUtils
  * @Description TODO
@@ -47,11 +50,17 @@ public class BrightenUtils {
         }
     }
 
+    /**
+     * 打开唤醒服务
+     * @param mContext
+     * @param time
+     * @param isOpen
+     */
     public static void openBrightenService(Context mContext, long time, boolean isOpen) {
         if (!isServiceExisted(AppContext.getAppContext(), Contants.SERVICE_BRIGHTEN)) {
             Intent intent = new Intent(mContext, BrightenService.class);
-            intent.putExtra("time", time);
-            intent.putExtra("isOpen", isOpen);
+            intent.putExtra(TAG_TIME, time);
+            intent.putExtra(TAG_SWITCH, isOpen);
             mContext.startService(intent);
         }
     }
