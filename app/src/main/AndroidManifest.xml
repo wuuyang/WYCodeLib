@@ -11,9 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".downloaddemo.DownloadDemoActivity"></activity>
-        <activity android:name=".brightenscreen.BrightenScreenActivity" />
-        <activity android:name=".BaseActivity" />
         <activity android:name=".ShowActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".customview.CustomView"></activity>
+
+        <activity android:name=".multimedia.MultimediaActivity"></activity>
+        <activity android:name=".brightenscreen.BrightenScreenActivity" />
+        <activity android:name=".BaseActivity" />
 
         <service android:name=".brightenscreen.BrightenService" />
     </application>
